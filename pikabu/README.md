@@ -12,3 +12,5 @@ We are using XML API: https://pikabu.ru/generate_xml_comm.php?id=<POST_ID>, wher
 ## PikabuPostsCrawler (download and save to xml)
 * ``` ./PikabuPostsCrawler.py --start_id=123464 --max_id=123466 --added_items=already_added.list ```
 
+
+#### Works with both python2 and python3
