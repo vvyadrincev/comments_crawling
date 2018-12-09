@@ -23,7 +23,6 @@
 </post>
 ```
 
-
 ### Converting xml to plain text 
 ##### Default (only post content)
 ```bash
@@ -42,4 +41,6 @@
 ```bash
 nohup ./PostsAfterCrawlingProcessing.py -f <list_with_paths_to_xmls> &
 ```
+
+#### Works with both python2 and python3
 

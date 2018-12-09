@@ -2,8 +2,6 @@
 
 ##### Source: https://www.livejournal.com/
 
-## Tested for python2.7
-
 ### Collecting top 1000 journals
 ```bash
 nohup ./get_top_N_journals.py -N 1000 -o top1000 &
@@ -23,3 +21,5 @@ cat article_lists/* | grep -Po "https\://.*\.livejournal.com/\d+.html" > to_proc
 ```bash
 nohup ./LivejournalPostsCrawler.py -p 3 -f to_process.articles.list --download_delay=0.3 &
 ```
+
+#### Works with both python2 and python3

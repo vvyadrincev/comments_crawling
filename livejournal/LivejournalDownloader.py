@@ -32,7 +32,7 @@ class LiveJournalStyle_Downloader(object):
 
         self._sleep_is_need()
         self.last_download = time.time()
-        return self.session.get(url).content
+        return self.session.get(url).text
 
 
     def _time_diff(self):

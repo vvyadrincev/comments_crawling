@@ -227,7 +227,7 @@ class LivejournalCommentsProcessor():
             os.mkdir(dir)
 
     def _normalise_string(self, s):
-        if isinstance(s, (str, unicode)):
+        if isinstance(s, (str, )):
             s = s.strip()
         else:
             s = u""

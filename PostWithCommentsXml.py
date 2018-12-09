@@ -6,6 +6,7 @@ import datetime
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 import lxml.html
+import sys
 
 
 class PostWithCommentsXml(object):
@@ -37,15 +38,15 @@ class PostWithCommentsXml(object):
     def _create_comment_elem(self, id, parent, content, additional):
         comment = ET.Element('comment')
 
-        comment.set(key="id", value=str(id))
-        comment.set(key="parent", value=str(parent))
+        comment.set("id", str(id))
+        comment.set("parent", str(parent))
 
         content_el = ET.Element('content')
         content_el.text = content
         comment.append(content_el)
 
         for attr in additional:
-            comment.set(key=attr, value=str(additional[attr]))
+            comment.set(attr, str(additional[attr]))
 
         return comment
 
@@ -63,7 +64,10 @@ class PostWithCommentsXml(object):
 
         xmlstr = minidom.parseString(ET.tostring(self._xml)).toprettyxml(indent="   ")
         with open(filepath, "w") as f:
-            f.write(xmlstr.encode('utf-8'))
+            if ((3,) > sys.version_info):
+                f.write(xmlstr.encode('utf-8'))
+            else:
+                f.write(xmlstr)
         logging.info("Successfully saved %s", filepath)
 
 

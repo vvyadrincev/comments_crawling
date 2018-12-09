@@ -48,6 +48,9 @@ class BasicItemFetcher(object):
         return self
 
     def next(self):
+        return self.__next__()
+
+    def __next__(self):
         ne = self._get_next_item()
         if ne is None:
             raise StopIteration()
